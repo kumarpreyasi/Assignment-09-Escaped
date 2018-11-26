@@ -1,0 +1,143 @@
+/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/bin/java "-javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=60573:/Applications/IntelliJ IDEA CE.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath /Users/preyasikumar/IdeaProjects/Escaped1/out/production/Escaped1 Main
+
+Welcome to the game! You have a total of 30 turns to escape. Each command you type counts as a turn, and I am only capable of understanding two-word commands, so choose your words wisely. Type help for a total list of commands at any time during the game.
+
+You find yourself in a large foyer. There is a door to the north. To the west is a bench against the wall. To the east is a chest on the floor. In the center of the room is a large candle. The candle is unlit.
+** You have 30 turns remaining.
+
+Enter command: >> help
+
+Here is a list of commands you can use: 
+
+Word 1: open | close | light | read | write | play | look | get
+Word 2: door | room | bench | chest | candle | note | matches | shelves | book | pen | scroll | music | trumpet | piano | drum | lock | north | south | east | west
+
+The command "help" does not count as a turn. "Look" used alone will restate the description of the room you are in.
+** You have 30 turns remaining.
+
+Enter command: >> look
+You find yourself in a large foyer. There is a door to the north. To the west is a bench against the wall. To the east is a chest on the floor. In the center of the room is a large candle. The candle is unlit.
+** You have 29 turns remaining.
+
+Enter command: >> look candle
+The candle in the center of the room is not lit.
+** You have 28 turns remaining.
+
+Enter command: >> look bench
+There is a bench on the western wall. There is a small note here.
+** You have 27 turns remaining.
+
+Enter command: >> read note
+The note is written on a piece of embossed vellum paper. In script writing you can make ou the phrase "May my light show you the way."
+** You have 26 turns remaining.
+
+Enter command: >> look chest
+You see a chest. It is closed. It doesn't appear to be locked.
+** You have 25 turns remaining.
+
+Enter command: >> open chest
+You open the chest. There is a box of matches here.
+** You have 24 turns remaining.
+
+Enter command: >> get matches
+You take the box of matches out of the chest.
+** You have 23 turns remaining.
+
+Enter command: >> light candle
+You light the candle, and fierce wind blows through the room, extinguishing the match in your hand, but making the candle burn brighter. You hear a loud metal grinding sound from the north.
+** You have 22 turns remaining.
+
+Enter command: >> look door
+The door to the north is closed, but unlocked.
+** You have 21 turns remaining.
+
+Enter command: >> open door
+The north door is open.
+** You have 20 turns remaining.
+
+Enter command: >> go north
+You leave the foyer, the door behind you closes with a loud slam, and you hear the locking mechanism relock the door. You cannot return to the foyer.
+
+You now find yourself in a library full of shelves of books. In the center of the room is a desk. On the desk is a pen and a scroll. There is a door to the north.
+** You have 19 turns remaining.
+
+Enter command: >> look desk
+On the desk you see a pen and a scroll. There is something written on the scroll.
+** You have 18 turns remaining.
+
+Enter command: >> get pen
+You get the pen and now need to write on something.
+** You have 17 turns remaining.
+
+Enter command: >> read scroll
+The scroll says, "Share your story."
+** You have 16 turns remaining.
+
+Enter command: >> look shelves
+You look through the shelves and find a book that is open. The book is titled, "The Autobiography of ___" with the rest of the title empty. Get that book. You probably have to fill in the blank.
+** You have 15 turns remaining.
+
+Enter command: >> get book
+You get that book. Now you need to write the rest of the title.
+** You have 14 turns remaining.
+
+Enter command: >> write name
+You write your name on that book and hear a loud metal grinding sound from the north.
+** You have 13 turns remaining.
+
+Enter command: >> look door
+You see the door is still closed, but is now unlocked.
+** You have 12 turns remaining.
+
+Enter command: >> open door
+You open the north door.
+** You have 11 turns remaining.
+
+Enter command: >> go north
+You leave the library, the door behind you closes with a loud slam, and you hear the locking mechanism relock the door. You cannot return to the library.
+
+You find yourself in a conservatory. The conservatory is beautiful, with high ceilings, bright lights illuminating the entire room, and hundreds of empty seats. In the center you see a trumpet, a drum, and a piano, next to a music stand. There is a piece of sheet music on the stand. There is a door to the north.
+** You have 10 turns remaining.
+
+Enter command: >> look sheet
+You look at the sheet music on the stand and see something written on it. Read it.
+** You have 9 turns remaining.
+
+Enter command: >> read sheet
+You read the sheet music and see that there are no music notes on the page. The only thing on the sheet is the phrase, "Timbre, Tone, and Time" is written. Perhaps this relates to the instruments.
+** You have 8 turns remaining.
+
+Enter command: >> play trumpet
+You play the trumpet. What a bright timbre.
+** You have 7 turns remaining.
+
+Enter command: >> play drum
+You play the drum. What a fast time. You have to play the trumpet and piano before the drum, though.
+** You have 6 turns remaining.
+
+Enter command: >> play trumpet
+You play the trumpet. What a bright timbre.
+** You have 5 turns remaining.
+
+Enter command: >> play piano
+You play the piano. What a beautiful tone.
+** You have 4 turns remaining.
+
+Enter command: >> play drum
+You play the drum. What a fast time. You hear a loud metal grinding sound from the north.
+** You have 3 turns remaining.
+
+Enter command: >> look door
+You see the door is still closed, but is now unlocked.
+** You have 2 turns remaining.
+
+Enter command: >> open door
+You open the north door. Freedom appears to be close!
+** You have 1 turns remaining.
+
+Enter command: >> go north
+You leave the conservatory, the door behind you closes with a loud slam, and you hear the locking mechanism relock the door. You cannot return to the conservatory. You find yourself outside!
+
+Congratulations! You have successfully escaped and completed the game in 30 moves.
+
+Process finished with exit code 0
