@@ -65,7 +65,7 @@ public class Main {
         if(!allcompleted) {
             System.out.println("\nSorry, you have run out of turns. You're trapped in here forever. Click play to try again.");
         }
-    
+
     }
 
     public static void help() {
@@ -298,11 +298,11 @@ public class Main {
         } else {
             System.out.println("I'm sorry, I do not understand your command.");
         }
-   
+
     }
 
     public static void conservatory() {
-        
+
         if (command.equals("look")) {
             System.out.println("You find yourself in a conservatory. The conservatory is beautiful, with high ceilings, bright lights illuminating the entire room, and hundreds of empty seats. In the center you see a trumpet, a drum, and a piano, next to a music stand. There is a piece of sheet music on the stand. There is a door to the north.");
         } else if (command.equals("look conservatory")) {
@@ -360,10 +360,10 @@ public class Main {
             System.out.println("You sit down at the piano, and get ready to play it.");
             getpianodone = true;
         } else if (command.equals("get drum")) {
-            System.out.println("You sit down at the drum set, and get ready to play it.");
+            System.out.println("You sit down at the drum set, grab the drumsticks, and get ready to play it.");
             getdrumdone = true;
         } else if (command.equals("go drum")) {
-            System.out.println("You sit down at the drum set, and get ready to play it.");
+            System.out.println("You sit down at the drum set, grab the drumsticks, and get ready to play it.");
             getdrumdone = true;
         } else if (command.equals("play trumpet")) {
             if(gettrumpetdone){
@@ -428,7 +428,7 @@ public class Main {
         } else {
             System.out.println("I'm sorry, I do not understand your command.");
         }
-    
+
     }
 
 }
