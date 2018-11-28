@@ -16,14 +16,10 @@ public class Main {
     public static Boolean openlibrarydoordone = false;
 
     public static Boolean lookshelvesdone = false;
-    public static Boolean getbookdone = false;
     public static Boolean getpendone = false;
     public static Boolean writeonbookdone = false;
     public static Boolean openconservatorydoordone = false;
 
-    public static Boolean gettrumpetdone = false;
-    public static Boolean getpianodone = false;
-    public static Boolean getdrumdone = false;
     public static Boolean playtrumpetdone = false;
     public static Boolean playpianodone = false;
     public static Boolean playdrumdone = false;
@@ -239,38 +235,43 @@ public class Main {
         } else if (command.equals("look shelves")) {
             System.out.println("You look through the shelves and find a book that is open. The book is titled, \"The Autobiography of ___\" with the rest of the title empty. Get that book. You probably have to fill in the blank.");
             lookshelvesdone = true;
+        } else if (command.equals("look shelf")) {
+            System.out.println("You look through the shelves and find a book that is open. The book is titled, \"The Autobiography of ___\" with the rest of the title empty. Get that book. You probably have to fill in the blank.");
+            lookshelvesdone = true;
+        } else if (command.equals("look book")) {
+            System.out.println("You find a book that is open. It's titled, \"The Autobiography of ___\" with the rest of the title empty. Get that book. You probably have to fill in the blank.");
+            lookshelvesdone = true;
         } else if (command.equals("get book")) {
             if (lookshelvesdone) {
                 System.out.println("You get that book. Now you need to write the rest of the title.");
-                getbookdone = true;
             } else {
-                System.out.println("What book?");
+                System.out.println("Which book?");
             }
         } else if (command.equals("look pen")) {
             System.out.println("You look at the pen. It's a cool pen.");
         } else if (command.equals("get pen")) {
-            System.out.println("You get the pen and now need to write on something.");
+            System.out.println("You get the pen. It's a cool pen. Luckily it's not out of ink.");
             getpendone = true;
         } else if (command.equals("write name")) {
-            if (getpendone && getbookdone) {
-                System.out.println("You write your name on that book and hear a loud metal grinding sound from the north.");
+            if (getpendone) {
+                System.out.println("You write your name on the book and hear a loud metal grinding sound from the north.");
                 writeonbookdone = true;
             } else {
-                System.out.println("Where and how will you write your name?");
+                System.out.println("You need something to write your name with.");
             }
         } else if (command.equals("write title")) {
-            if (getpendone && getbookdone) {
-                System.out.println("You write your name on that book and hear a loud metal grinding sound from the north.");
+            if (getpendone) {
+                System.out.println("You write your name on the book and hear a loud metal grinding sound from the north.");
                 writeonbookdone = true;
             } else {
-                System.out.println("Where and how will you write the title?");
+                System.out.println("You need something to write your name with.");
             }
         } else if (command.equals("write book")) {
-            if (getpendone && getbookdone) {
-                System.out.println("You write your name on that book and hear a loud metal grinding sound from the north.");
+            if (getpendone) {
+                System.out.println("You write your name on the book and hear a loud metal grinding sound from the north.");
                 writeonbookdone = true;
             } else {
-                System.out.println("Where and how will you write?");
+                System.out.println("You need something to write your name with.");
             }
         } else if (command.equals("look north")) {
             System.out.println("You look to the north and see the door.");
@@ -349,59 +350,35 @@ public class Main {
             System.out.println("You read the sheet music and see that there are no music notes on the page. The only thing on the sheet is the phrase, \"Timbre, Tone, and Time\" written in standard jazz font. Perhaps this relates to the the trumpet, piano, and drum.");
         } else if (command.equals("get trumpet")) {
             System.out.println("You acquire the trumpet, and get ready to play it.");
-            gettrumpetdone = true;
         } else if (command.equals("go trumpet")) {
             System.out.println("You acquire the trumpet, and get ready to play it.");
-            gettrumpetdone = true;
         } else if (command.equals("get piano")) {
             System.out.println("You sit down at the piano, and get ready to play it.");
-            getpianodone = true;
         } else if (command.equals("go piano")) {
             System.out.println("You sit down at the piano, and get ready to play it.");
-            getpianodone = true;
         } else if (command.equals("get drum")) {
             System.out.println("You sit down at the drum set, grab the drumsticks, and get ready to play it.");
-            getdrumdone = true;
         } else if (command.equals("go drum")) {
             System.out.println("You sit down at the drum set, grab the drumsticks, and get ready to play it.");
-            getdrumdone = true;
         } else if (command.equals("play trumpet")) {
-            if(gettrumpetdone){
-                System.out.println("You play the trumpet. What a bright timbre.");
-                playtrumpetdone = true;
-            } else {
-                System.out.println("You need to get the trumpet before you can play it.");
-            }
+            System.out.println("You play the trumpet. What a bright timbre.");
+            playtrumpetdone = true;
         } else if (command.equals("play piano")) {
-            if (playtrumpetdone && getpianodone) {
+            if (playtrumpetdone) {
                 System.out.println("You play the piano. What a beautiful tone.");
                 playpianodone = true;
-            } else if(playtrumpetdone && !getpianodone){
-                System.out.println("You have to go to the piano before you can play it.");
-            } else if(!playtrumpetdone && getpianodone){
-                System.out.println("You have to play the trumpet before you can play the piano.");
                 playtrumpetdone = false;
             } else {
-                System.out.println("You have to the play the trumpet before you can play the piano.");
+                System.out.println("Nope. Remember: timbre, tone, time.");
+                playpianodone = false;
+                playtrumpetdone = false;
             }
         } else if (command.equals("play drum")) {
-            if (playtrumpetdone && playpianodone && getdrumdone) {
+            if (!playtrumpetdone && playpianodone) {
                 System.out.println("You play the drum. What a fast time. You hear a loud metal grinding sound from the north.");
                 playdrumdone = true;
-            } else if(playtrumpetdone && playpianodone && !getdrumdone){
-                System.out.println("You can't play the drums without going to it first.");
-            } else if(playtrumpetdone && !playpianodone && getdrumdone){
-                System.out.println("You have to the play the trumpet and piano before you can play the drums.");
-                playpianodone = false;
-                playtrumpetdone = false;
-                getdrumdone = false;
-            } else if(!playtrumpetdone && playpianodone && getdrumdone){
-                System.out.println("You have to the play the trumpet and piano before you can play the drums.");
-                playpianodone = false;
-                playtrumpetdone = false;
-                getdrumdone = false;
             } else {
-                System.out.println("You have to the play the trumpet and piano before you can play the drums.");
+                System.out.println("Nope. Remember: timbre, tone, time.");
             }
         } else if (command.equals("look north")) {
             System.out.println("You look to the north and see the door.");
