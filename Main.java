@@ -43,7 +43,6 @@ public class Main {
             System.out.println("** You have " + turnsremaining + " turns remaining.\n");
             System.out.print("Enter command: >> ");
             command = sc.nextLine();
-//            System.out.println("You said " + command);
 
             if (command.equals("help") || command.equals("Help") || command.equals("HELP")) {
                 help();
@@ -66,6 +65,7 @@ public class Main {
         if(!allcompleted) {
             System.out.println("\nSorry, you have run out of turns. You're trapped in here forever. Click play to try again.");
         }
+    
     }
 
     public static void help() {
@@ -298,11 +298,11 @@ public class Main {
         } else {
             System.out.println("I'm sorry, I do not understand your command.");
         }
+   
     }
 
     public static void conservatory() {
-
-
+        
         if (command.equals("look")) {
             System.out.println("You find yourself in a conservatory. The conservatory is beautiful, with high ceilings, bright lights illuminating the entire room, and hundreds of empty seats. In the center you see a trumpet, a drum, and a piano, next to a music stand. There is a piece of sheet music on the stand. There is a door to the north.");
         } else if (command.equals("look conservatory")) {
@@ -427,7 +427,8 @@ public class Main {
             }
         } else {
             System.out.println("I'm sorry, I do not understand your command.");
-            }
         }
+    
+    }
 
 }
