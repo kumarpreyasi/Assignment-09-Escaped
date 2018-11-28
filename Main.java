@@ -114,6 +114,12 @@ public class Main {
             } else {
                 System.out.println("What note?");
             }
+        } else if (command.equals("get note")) {
+            if (lookbenchdone) {
+                System.out.println("You acquire the note. There's something written on it.");
+            } else {
+                System.out.println("What note?");
+            }
         } else if (command.equals("read note")) {
             if (lookbenchdone) {
                 System.out.println("The note is written on a piece of embossed vellum paper. In script writing you can make out the phrase \"May my light show you the way.\"");
@@ -425,6 +431,3 @@ public class Main {
         }
 
 }
-
-
-
