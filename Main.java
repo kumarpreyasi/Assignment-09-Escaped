@@ -21,6 +21,9 @@ public class Main {
     public static Boolean writeonbookdone = false;
     public static Boolean openconservatorydoordone = false;
 
+    public static Boolean gettrumpetdone = false;
+    public static Boolean getpianodone = false;
+    public static Boolean getdrumdone = false;
     public static Boolean playtrumpetdone = false;
     public static Boolean playpianodone = false;
     public static Boolean playdrumdone = false;
@@ -67,7 +70,7 @@ public class Main {
 
     public static void help() {
         System.out.println("\nHere is a list of commands you can use: ");
-        System.out.println("\nWord 1: open | close | light | read | write | play | look | get");
+        System.out.println("\nWord 1: open | close | light | read | write | play | look | get | go");
         System.out.println("Word 2: door | room | bench | chest | candle | note | matches | shelves | book | pen | scroll | music | trumpet | piano | drum | lock | north | south | east | west");
         System.out.println("\nThe command \"help\" does not count as a turn. \"Look\" used alone will restate the description of the room you are in.");
     }
@@ -78,6 +81,30 @@ public class Main {
             System.out.println("You find yourself in a large foyer. There is a door to the north. To the west is a bench against the wall. To the east is a chest on the floor. In the center of the room is a large candle. The candle is unlit.");
         } else if (command.equals("look foyer")) {
             System.out.println("You find yourself in a large foyer. There is a door to the north. To the west is a bench against the wall. To the east is a chest on the floor. In the center of the room is a large candle. The candle is unlit.");
+        } else if (command.equals("look south")) {
+            System.out.println("There's nothing to your south.");
+        } else if (command.equals("go south")) {
+            System.out.println("There's nothing to your south.");
+        } else if (command.equals("look east")) {
+            System.out.println("There's a chest on the floor to the east.");
+        } else if (command.equals("go east")) {
+            System.out.println("You go to the chest.");
+        } else if (command.equals("look west")) {
+            System.out.println("There's a bench against the western wall.");
+        } else if (command.equals("go west")) {
+            System.out.println("You go to the bench.");
+        } else if (command.equals("look lock")) {
+            if(lightcandledone){
+                System.out.println("That is one secure lock which you have just unlocked. Good job.");
+            } else {
+                System.out.println("That is one secure lock. Impenetrable. Unbreakable. Impossible. Wow. ");
+            }
+        } else if (command.equals("open lock")) {
+            if(lightcandledone){
+                System.out.println("You just did it by lighting the candle!");
+            } else {
+                System.out.println("Well that won't work. You have to use what's in the room to unlock the door.");
+            }
         } else if (command.equals("look bench")) {
             System.out.println("There is a bench on the western wall. There is a small note here.");
             lookbenchdone = true;
@@ -89,7 +116,7 @@ public class Main {
             }
         } else if (command.equals("read note")) {
             if (lookbenchdone) {
-                System.out.println("The note is written on a piece of embossed vellum paper. In script writing you can make ou the phrase \"May my light show you the way.\"");
+                System.out.println("The note is written on a piece of embossed vellum paper. In script writing you can make out the phrase \"May my light show you the way.\"");
             } else {
                 System.out.println("What note?");
             }
@@ -169,8 +196,34 @@ public class Main {
             System.out.println("You now find yourself in a library full of shelves of books. In the center of the room is a desk. On the desk is a pen and a scroll. There is a door to the north.");
         } else if (command.equals("look library")) {
             System.out.println("You now find yourself in a library full of shelves of books. In the center of the room is a desk. On the desk is a pen and a scroll. There is a door to the north.");
+        } else if (command.equals("look south")) {
+            System.out.println("You see the door that you came through to get to the library from the foyer. It is locked. You cannot go back there.");
+        } else if (command.equals("go south")) {
+            System.out.println("The door from the foyer to the library is locked. You cannot go back there.");
+        } else if (command.equals("look east")) {
+            System.out.println("You see several shelves full of books to the east. There actually are shelves of books all around you.");
+        } else if (command.equals("go east")) {
+            System.out.println("You go towards some of the bookshelves on the east.");
+        } else if (command.equals("look west")) {
+            System.out.println("You see several shelves full of books to the west. There actually are shelves of books all around you. There also is a desk in the center of the room.");
+        } else if (command.equals("go west")) {
+            System.out.println("You go towards some of the bookshelves on the west, and stop by the desk in the center of the room.");
+        } else if (command.equals("look lock")) {
+            if(writeonbookdone){
+                System.out.println("That is one secure lock which you have just unlocked. Good job.");
+            } else {
+                System.out.println("That is one secure lock. Impenetrable. Unbreakable. Impossible. Wow. ");
+            }
+        } else if (command.equals("open lock")) {
+            if(writeonbookdone){
+                System.out.println("You just did it by writing your name in the title of that book!");
+            } else {
+                System.out.println("Well that won't work. You have to use what's in the room to unlock the door.");
+            }
         } else if (command.equals("look books")) {
             System.out.println("There are a lot of books.");
+        } else if (command.equals("go desk")) {
+            System.out.println("You go to the desk and see a pen and a scroll. There's something written on the scroll.");
         } else if (command.equals("look desk")) {
             System.out.println("On the desk you see a pen and a scroll. There is something written on the scroll.");
         } else if (command.equals("look scroll")) {
@@ -198,6 +251,13 @@ public class Main {
                 writeonbookdone = true;
             } else {
                 System.out.println("Where and how will you write your name?");
+            }
+        } else if (command.equals("write title")) {
+            if (getpendone && getbookdone) {
+                System.out.println("You write your name on that book and hear a loud metal grinding sound from the north.");
+                writeonbookdone = true;
+            } else {
+                System.out.println("Where and how will you write the title?");
             }
         } else if (command.equals("write book")) {
             if (getpendone && getbookdone) {
@@ -241,6 +301,30 @@ public class Main {
             System.out.println("You find yourself in a conservatory. The conservatory is beautiful, with high ceilings, bright lights illuminating the entire room, and hundreds of empty seats. In the center you see a trumpet, a drum, and a piano, next to a music stand. There is a piece of sheet music on the stand. There is a door to the north.");
         } else if (command.equals("look conservatory")) {
             System.out.println("You find yourself in a conservatory. The conservatory is beautiful, with high ceilings, bright lights illuminating the entire room, and hundreds of empty seats. In the center you see a trumpet, a drum, and a piano, next to a music stand. There is a piece of sheet music on the stand. There is a door to the north.");
+        } else if (command.equals("look south")) {
+            System.out.println("You see the door that you came through to get to the conservatory from the library. It is locked. You cannot go back there.");
+        } else if (command.equals("go south")) {
+            System.out.println("The door from the library to the conservatory is locked. You cannot go back there.");
+        } else if (command.equals("look east")) {
+            System.out.println("You see hundreds of empty seats around you, and you wonder why there's a trumpet, piano, and drum in the center of the room.");
+        } else if (command.equals("go east")) {
+            System.out.println("You go towards the instruments.");
+        } else if (command.equals("look west")) {
+            System.out.println("You see hundreds of empty seats around you, and you wonder what's the view like from the west side of the conservatory.");
+        } else if (command.equals("go west")) {
+            System.out.println("You go to the west side and sit in one of the seats. The view is even more beautiful from here! You spot the trumpet, piano, and drum in the center of the room once again and feel the urge to play them all.");
+        } else if (command.equals("look lock")) {
+            if(playdrumdone){
+                System.out.println("That is one secure lock which you have just unlocked. Good job.");
+            } else {
+                System.out.println("That is one secure lock. Impenetrable. Unbreakable. Impossible. Wow. ");
+            }
+        } else if (command.equals("open lock")) {
+            if(playdrumdone){
+                System.out.println("You just did it by playing the instruments!");
+            } else {
+                System.out.println("Well that won't work. You have to use what's in the room to unlock the door.");
+            }
         } else if (command.equals("look trumpet")) {
             System.out.println("You look at the trumpet. Luckily you know how to play this instrument.");
         } else if (command.equals("look drum")) {
@@ -252,32 +336,66 @@ public class Main {
         } else if (command.equals("look music")) {
             System.out.println("You look at the sheet music on the stand and see something written on it. Read it.");
         } else if (command.equals("read music")) {
-            System.out.println("You read the sheet music and see that there are no music notes on the page. The only thing on the sheet is the phrase, \"Timbre, Tone, and Time\" is written. Perhaps this relates to the instruments.");
+            System.out.println("You read the sheet music and see that there are no music notes on the page. The only thing on the sheet is the phrase, \"Timbre, Tone, and Time\" written in standard jazz font. Perhaps this relates to the the trumpet, piano, and drum.");
         } else if (command.equals("look sheet")) {
             System.out.println("You look at the sheet music on the stand and see something written on it. Read it.");
         } else if (command.equals("read sheet")) {
-            System.out.println("You read the sheet music and see that there are no music notes on the page. The only thing on the sheet is the phrase, \"Timbre, Tone, and Time\" is written. Perhaps this relates to the instruments.");
+            System.out.println("You read the sheet music and see that there are no music notes on the page. The only thing on the sheet is the phrase, \"Timbre, Tone, and Time\" written in standard jazz font. Perhaps this relates to the the trumpet, piano, and drum.");
+        } else if (command.equals("get trumpet")) {
+            System.out.println("You acquire the trumpet, and get ready to play it.");
+            gettrumpetdone = true;
+        } else if (command.equals("go trumpet")) {
+            System.out.println("You acquire the trumpet, and get ready to play it.");
+            gettrumpetdone = true;
+        } else if (command.equals("get piano")) {
+            System.out.println("You sit down at the piano, and get ready to play it.");
+            getpianodone = true;
+        } else if (command.equals("go piano")) {
+            System.out.println("You sit down at the piano, and get ready to play it.");
+            getpianodone = true;
+        } else if (command.equals("get drum")) {
+            System.out.println("You sit down at the drum set, and get ready to play it.");
+            getdrumdone = true;
+        } else if (command.equals("go drum")) {
+            System.out.println("You sit down at the drum set, and get ready to play it.");
+            getdrumdone = true;
         } else if (command.equals("play trumpet")) {
-            System.out.println("You play the trumpet. What a bright timbre.");
-            playtrumpetdone = true;
+            if(gettrumpetdone){
+                System.out.println("You play the trumpet. What a bright timbre.");
+                playtrumpetdone = true;
+            } else {
+                System.out.println("You need to get the trumpet before you can play it.");
+            }
         } else if (command.equals("play piano")) {
-            if (playtrumpetdone) {
+            if (playtrumpetdone && getpianodone) {
                 System.out.println("You play the piano. What a beautiful tone.");
                 playpianodone = true;
-            } else {
-                System.out.println("You play the piano. What a beautiful tone. You have to play the trumpet before the piano, though.");
+            } else if(playtrumpetdone && !getpianodone){
+                System.out.println("You have to go to the piano before you can play it.");
+            } else if(!playtrumpetdone && getpianodone){
+                System.out.println("You have to play the trumpet before you can play the piano.");
                 playtrumpetdone = false;
-                playpianodone = false;
+            } else {
+                System.out.println("You have to the play the trumpet before you can play the piano.");
             }
         } else if (command.equals("play drum")) {
-            if (playtrumpetdone && playpianodone) {
+            if (playtrumpetdone && playpianodone && getdrumdone) {
                 System.out.println("You play the drum. What a fast time. You hear a loud metal grinding sound from the north.");
                 playdrumdone = true;
-            } else {
-                System.out.println("You play the drum. What a fast time. You have to play the trumpet and piano before the drum, though.");
-                playtrumpetdone = false;
+            } else if(playtrumpetdone && playpianodone && !getdrumdone){
+                System.out.println("You can't play the drums without going to it first.");
+            } else if(playtrumpetdone && !playpianodone && getdrumdone){
+                System.out.println("You have to the play the trumpet and piano before you can play the drums.");
                 playpianodone = false;
-                playdrumdone = false;
+                playtrumpetdone = false;
+                getdrumdone = false;
+            } else if(!playtrumpetdone && playpianodone && getdrumdone){
+                System.out.println("You have to the play the trumpet and piano before you can play the drums.");
+                playpianodone = false;
+                playtrumpetdone = false;
+                getdrumdone = false;
+            } else {
+                System.out.println("You have to the play the trumpet and piano before you can play the drums.");
             }
         } else if (command.equals("look north")) {
             System.out.println("You look to the north and see the door.");
