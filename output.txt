@@ -1,4 +1,4 @@
-/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/bin/java "-javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=60573:/Applications/IntelliJ IDEA CE.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath /Users/preyasikumar/IdeaProjects/Escaped1/out/production/Escaped1 Main
+/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/bin/java "-javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=52914:/Applications/IntelliJ IDEA CE.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath /Users/preyasikumar/IdeaProjects/Escaped1/out/production/Escaped1 Main
 
 Welcome to the game! You have a total of 30 turns to escape. Each command you type counts as a turn, and I am only capable of understanding two-word commands, so choose your words wisely. Type help for a total list of commands at any time during the game.
 
@@ -9,7 +9,7 @@ Enter command: >> help
 
 Here is a list of commands you can use: 
 
-Word 1: open | close | light | read | write | play | look | get
+Word 1: open | close | light | read | write | play | look | get | go
 Word 2: door | room | bench | chest | candle | note | matches | shelves | book | pen | scroll | music | trumpet | piano | drum | lock | north | south | east | west
 
 The command "help" does not count as a turn. "Look" used alone will restate the description of the room you are in.
@@ -28,7 +28,7 @@ There is a bench on the western wall. There is a small note here.
 ** You have 27 turns remaining.
 
 Enter command: >> read note
-The note is written on a piece of embossed vellum paper. In script writing you can make ou the phrase "May my light show you the way."
+The note is written on a piece of embossed vellum paper. In script writing you can make out the phrase "May my light show you the way."
 ** You have 26 turns remaining.
 
 Enter command: >> look chest
@@ -104,31 +104,31 @@ You look at the sheet music on the stand and see something written on it. Read i
 ** You have 9 turns remaining.
 
 Enter command: >> read sheet
-You read the sheet music and see that there are no music notes on the page. The only thing on the sheet is the phrase, "Timbre, Tone, and Time" is written. Perhaps this relates to the instruments.
+You read the sheet music and see that there are no music notes on the page. The only thing on the sheet is the phrase, "Timbre, Tone, and Time" written in standard jazz font. Perhaps this relates to the the trumpet, piano, and drum.
 ** You have 8 turns remaining.
 
-Enter command: >> play trumpet
-You play the trumpet. What a bright timbre.
+Enter command: >> get trumpet
+You acquire the trumpet, and get ready to play it.
 ** You have 7 turns remaining.
 
-Enter command: >> play drum
-You play the drum. What a fast time. You have to play the trumpet and piano before the drum, though.
-** You have 6 turns remaining.
-
 Enter command: >> play trumpet
 You play the trumpet. What a bright timbre.
+** You have 6 turns remaining.
+
+Enter command: >> go piano
+You sit down at the piano, and get ready to play it.
 ** You have 5 turns remaining.
 
 Enter command: >> play piano
 You play the piano. What a beautiful tone.
 ** You have 4 turns remaining.
 
-Enter command: >> play drum
-You play the drum. What a fast time. You hear a loud metal grinding sound from the north.
+Enter command: >> go drum
+You sit down at the drum set, and get ready to play it.
 ** You have 3 turns remaining.
 
-Enter command: >> look door
-You see the door is still closed, but is now unlocked.
+Enter command: >> play drum
+You play the drum. What a fast time. You hear a loud metal grinding sound from the north.
 ** You have 2 turns remaining.
 
 Enter command: >> open door
